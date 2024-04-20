@@ -1,0 +1,69 @@
+@use '../../styles/variables' as v;
+
+.text {
+    color: inherit;
+}
+
+.textPrimary {
+    color: v.$text-primary;
+}
+
+.textSecondary {
+    color: v.$text-secondary;
+}
+
+.textAccent {
+    color: v.$text-accent;
+}
+
+.textButton {
+    font-size: 18px;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.textTitle {
+    font-size: 44px;
+    line-height: 48px;
+    font-weight: bold;
+}
+
+.text20 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.text18 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.text16 {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.text14 {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.textLines {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--max-lines);
+    line-clamp: var(--max-lines);
+    -webkit-box-orient: vertical;
+}
+
+.textNormal {
+    font-weight: normal;
+}
+
+.textMedium {
+    font-weight: 500;
+}
+
+.textBold {
+    font-weight: bold;
+}

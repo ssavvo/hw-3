@@ -1,0 +1,35 @@
+@use '../../styles/variables' as v;
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown__list {
+    @include v.shadow;
+    position: absolute;
+    left: 0;
+    top: calc(100% + v.$space-xxs);
+    z-index: 1000;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border-radius: v.$border-radius;
+}
+
+.dropdown__item {
+    padding: v.$space-s v.$space-xs;
+    color: v.$text-primary;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.dropdown__item_selected {
+    color: v.$text-accent;
+}
+
+.dropdown__item:hover {
+    color: v.$text-secondary;
+}
