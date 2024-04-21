@@ -14,6 +14,11 @@
         align-items: center;
         gap: v.$space-xl;
     }
+    &Avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
     :after {
         content: '';
         width: 100%;

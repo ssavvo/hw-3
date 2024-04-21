@@ -36,11 +36,7 @@ const Card: React.FC<CardProps> = ({
       <img src={image} alt="Картиночка" className={`${styles.cardImage}`} />
       <div className={`${styles.cardInfo}`}>
         <div className={`${styles.cardText}`}>
-          {captionSlot && (
-            <Text view={'p-14'} color={'secondary'} weight={'medium'}>
-              {captionSlot}
-            </Text>
-          )}
+          {captionSlot}
           <Text view="p-20" weight={'medium'} color="primary" maxLines={2}>
             {title}
           </Text>

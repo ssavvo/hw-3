@@ -1,7 +1,9 @@
 import axios from 'axios';
 import * as React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import Card from 'components/Card';
+import StarIcon from "components/Icons/StarIcon";
+import Text from "components/Text";
 import defaultPic from './Rectangle.png';
 import styles from './RepoList.module.scss';
 
@@ -9,6 +11,8 @@ export type Repo = {
   id: number;
   name: string;
   description: string;
+  stargazers_count: string;
+  updated_at: string;
 };
 
 const RepoList = () => {
@@ -37,11 +41,25 @@ const RepoList = () => {
         <Card
           key={repo.id}
           image={defaultPic}
+          captionSlot={(<div className={styles.caption}>
+            <div className={styles.stars}>
+              <StarIcon width={14} height={14} />
+              <Text view={'p-14'} weight={'medium'} color={'secondary'}>
+                {repo.stargazers_count}
+              </Text>
+            </div>
+            <Text view={'p-14'} weight={'medium'} color={'secondary'}>
+              {`Updated ${new Date(repo.updated_at).toLocaleDateString('en', {day: 'numeric'})} ${new Date(repo.updated_at).toLocaleDateString('en', {month: 'short'})}`}
+            </Text>
+          </div>)}
           title={repo.name}
           subtitle={repo.description}
           onClick={() => handleRepoSelect(repo.name)}
         />
       ))}
+      <div>
+
+      </div>
     </div>
   );
 };

@@ -1,6 +1,20 @@
+@use '../../../../styles/variables' as v;
+
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 360px);
     justify-content: space-between;
     row-gap: 80px;
+}
+
+.caption {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    gap: v.$space-xxs;
+    color: #FF9432;
 }
