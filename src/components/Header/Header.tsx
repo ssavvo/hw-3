@@ -16,10 +16,10 @@ const Header = () => {
     React.useEffect(() => {
         axios.get('https://api.github.com/user', {
             headers: {
-                Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`,
+                ...(import.meta.env.VITE_GITHUB_SECRET ? {Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`} : {})
             },
         }).then(res => setUser(res.data))
-    })
+    }, [])
     return <header className={styles.header}>
         <div className={`container ${styles.headerContainer}`}>
             <div className={styles.headerLogo}>

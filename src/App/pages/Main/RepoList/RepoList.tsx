@@ -23,7 +23,7 @@ const RepoList = () => {
     axios
       .get(`https://api.github.com/orgs/${params.org}/repos`, {
         headers: {
-          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`,
+          ...(import.meta.env.VITE_GITHUB_SECRET ? {Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`} : {})
         },
       })
       .then((r) => {

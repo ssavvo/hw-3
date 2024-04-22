@@ -45,14 +45,14 @@ const RepoInfo = () => {
       .get(`https://api.github.com/repos/${org}/${repo}`, {
         headers: {
           Accept: 'application/vnd.github+json',
-          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`,
+          ...(import.meta.env.VITE_GITHUB_SECRET ? {Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`} : {})
         },
       })
       .then((res) => setRepoData(res.data));
     axios.get(`https://api.github.com/repos/${org}/${repo}/readme`, {
       headers: {
         Accept: 'application/vnd.github.html+json',
-        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`,
+        ...(import.meta.env.VITE_GITHUB_SECRET ? {Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`} : {})
       },
     }).then(res => {
       setRepoReadme(res.data)
@@ -64,16 +64,16 @@ const RepoInfo = () => {
     }
     axios.get(repoData.contributors_url, {
       headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`,
+        ...(import.meta.env.VITE_GITHUB_SECRET ? {Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`} : {})
       },
     }).then(res => Promise.all(res.data.map((contr: Contributor) => axios.get(contr['url'], {
       headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`,
+        ...(import.meta.env.VITE_GITHUB_SECRET ? {Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`} : {})
       }
     })))).then(res => setContributorList(res.map(r => r.data)));
     axios.get(repoData.languages_url, {
       headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`,
+        ...(import.meta.env.VITE_GITHUB_SECRET ? {Authorization: `Bearer ${import.meta.env.VITE_GITHUB_SECRET}`} : {})
       },
     }).then(res => {
       const totalSum = Object.values(res.data).reduce((sum: number, item: number) => sum += item, 0);
