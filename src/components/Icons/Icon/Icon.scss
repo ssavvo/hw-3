@@ -1,0 +1,22 @@
+@use '../../../styles/variables' as v;
+
+.icon {
+    display: block;
+    color: inherit;
+}
+
+.icon > svg {
+    display: block;
+}
+
+.icon_primary {
+    color: v.$text-primary;
+}
+
+.icon_secondary {
+    color: v.$text-secondary;
+}
+
+.icon_accent {
+    color: v.$text-accent;
+}

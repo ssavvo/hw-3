@@ -1,0 +1,32 @@
+@use "../../styles/variables" as v;
+
+.header {
+    width: 100%;
+    padding: v.$space-m 0;
+    position: relative;
+    &Container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &Logo {
+        display: flex;
+        align-items: center;
+        gap: v.$space-xl;
+    }
+    &Avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+    :after {
+        content: '';
+        width: 100%;
+        border-top: solid 1px v.$bg-alt-color;
+        border-bottom: solid 1px v.$bg-alt-color;
+        position: absolute;
+        left: 0;
+        top: calc(100% - 2px);
+        z-index: 1;
+    }
+}

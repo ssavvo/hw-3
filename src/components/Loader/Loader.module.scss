@@ -1,0 +1,31 @@
+@use "../../styles/variables" as v;
+
+.loader {
+    border-color: v.$brand-color;
+    border-style: solid;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    rotate: -58deg;
+}
+
+.loaderMedium {
+    width: calc(2 * v.$space-m);
+    height: calc(2 * v.$space-m);
+    margin: calc(0.5 * v.$space-m);
+    border-width: calc(0.25 * v.$space-m);
+}
+
+.loaderLarge {
+    width: calc(2 * v.$space-l);
+    height: calc(2 * v.$space-l);
+    margin: calc(0.5 * v.$space-l);
+    border-width: calc(0.25 * v.$space-l);
+}
+
+.loaderSmall {
+    width: calc(2 * v.$space-xxs);
+    height: calc(2 * v.$space-xxs);
+    margin: calc(0.5 * v.$space-xxs);
+    border-width: calc(0.25 * v.$space-xxs);
+}

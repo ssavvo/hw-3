@@ -1,0 +1,10 @@
+@use '../styles/variables' as v;
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: v.$bg-color;
+}

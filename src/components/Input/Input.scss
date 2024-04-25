@@ -1,0 +1,42 @@
+@use '../../styles/variables' as v;
+
+.input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 v.$space-xs;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: v.$space-xxs;
+    background-color: white;
+    color: v.$text-primary;
+    border: 1px white solid;
+    border-radius: v.$border-radius;
+}
+
+.input:focus-within {
+    border-color: v.$brand-color;
+}
+
+.input__field {
+    padding: 0;
+    border: none;
+    flex: 1;
+    font-size: 16px;
+    line-height: 20px;
+    color: v.$text-primary;
+    font-family: inherit;
+}
+
+.input__field::placeholder {
+    color: v.$text-secondary;
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+.input__field:disabled {
+    background-color: white;
+    color: v.$text-secondary;
+}

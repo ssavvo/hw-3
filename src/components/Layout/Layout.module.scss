@@ -1,0 +1,16 @@
+@use '../../styles/variables' as v;
+
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: v.$space-m;
+}
+
+.content {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
