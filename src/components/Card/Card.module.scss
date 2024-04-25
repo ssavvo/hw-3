@@ -12,7 +12,7 @@
     }
     &Image {
         object-fit: cover;
-        background-color: #D9D9D9;
+        background-color: v.$bg-alt-color;
     }
     &Info {
         flex: 1;
